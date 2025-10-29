@@ -1,0 +1,53 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>崩壊スターレイル 確率計算器</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Flaskのurl_forを使用 -->
+</head>
+<body>
+    <div id="app">
+        <h1>崩壊スターレイル 確率計算器</h1>
+
+        <section id="input-area">
+            <h2>入力項目</h2>
+            <!-- ここにユーザー入力フォームを配置 -->
+            <form>
+                <label for="target-char">目標限定☆5キャラクター枚数 (n):</label>
+                <input type="number" id="target-char" value="0" min="0"><br>
+
+                <label for="target-lightcone">目標限定☆5光円錐枚数 (m):</label>
+                <input type="number" id="target-lightcone" value="0" min="0"><br>
+
+                <label for="current-gems">所持星玉:</label>
+                <input type="number" id="current-gems" value="0" min="0"><br>
+
+                <label for="current-tickets">所持ガチャチケット:</label>
+                <input type="number" id="current-tickets" value="0" min="0"><br>
+
+                <label for="pulls-since-last-5star">前回☆5からのガチャ回数:</label>
+                <input type="number" id="pulls-since-last-5star" value="0" min="0"><br>
+
+                <label for="is-guaranteed">次回の☆5がピックアップ確定:</label>
+                <input type="checkbox" id="is-guaranteed"><br>
+
+                <label for="num-simulations">シミュレーション回数:</label>
+                <input type="number" id="num-simulations" value="1000" min="1000"><br>
+
+                <button type="button" id="calculate-button">計算する</button>
+            </form>
+        </section>
+
+        <section id="result-area">
+            <h2>計算結果</h2>
+            <!-- ここに計算結果を表示 -->
+            <div id="expected-probability"></div>
+            <div id="probability-distribution"></div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script> <!-- Flaskのurl_forを使用 -->
+</body>
+</html>
