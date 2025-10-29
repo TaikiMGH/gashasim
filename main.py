@@ -409,7 +409,7 @@ def simulate():
     initial_tickets = data.get('initial_tickets', 0)
     initial_pity_5star = data.get('initial_pity_5star', 0)
     initial_is_guaranteed_5star_pickup = data.get('initial_is_guaranteed_5star_pickup', False)
-    num_simulations = data.get('num_simulations', 10000) # フロントエンドから受け取る
+    num_simulations = data.get('num_simulations', 100) # フロントエンドから受け取る
 
     # シミュレーション実行
     result = run_monte_carlo_simulation(
