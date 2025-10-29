@@ -9,7 +9,7 @@ document.getElementById('calculate-button').addEventListener('click', async () =
     const initial_is_guaranteed_5star_pickup = document.getElementById('is-guaranteed').checked;
     const num_simulations = parseInt(document.getElementById('num-simulations').value);
 
-    const response = await fetch('http://127.0.0.1:5000/simulate', {
+    const response = await fetch('/simulate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
